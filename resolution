@@ -1,0 +1,64 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void main(){
+	
+	int ID, totalIdade = 0, totalPessoas = 0;
+	int otimo = 0, bom = 0, regular = 0, ruim = 0, pessimo = 0;
+	float media = 0, perOtimo, perBom, perRegular, perRuim, perPessimo;
+	char OP;
+	
+	printf("Qual sua idade?: \n");
+	scanf("%d", &ID);
+	
+	do{
+	    totalIdade += ID;
+	    printf("\nOpinioes sobre o filme: ");
+	    printf("\nA - Otimo");
+	    printf("\nB - Bom");
+	    printf("\nC - Regular");
+	    printf("\nD - Ruim");
+	    printf("\nE - Pessimo");
+	    printf("\nO que voce achou do filme?\n");
+	    scanf("\n%c", &OP);
+	    
+	    switch(OP){
+	case 'A':
+	    otimo++;
+	    break;
+	    case 'B':
+	    bom++;
+	    break;
+	    case 'C':
+	    regular++;
+	    break;
+	    case 'D':
+	    ruim++;
+	    break;
+	    case 'E':
+	    pessimo++;
+	    break;
+	    default:
+	      printf("Alternativa invalida!\n");
+	    }
+	       totalPessoas++;
+	        
+	        printf("Idade?\n");
+	        scanf("%d", &ID);
+	   }
+	while(ID > 0);
+	      media = totalIdade / totalPessoas;
+	   perOtimo = (otimo * 100 / totalPessoas);
+	   perBom = (bom * 100 / totalPessoas);
+	   perRegular = (regular * 100 / totalPessoas);
+	   perRuim = (ruim * 100 / totalPessoas);
+	   perPessimo = (pessimo * 100 / totalPessoas);
+	printf("\n%d pessoas responderam a pesquisa", totalPessoas);
+	printf("\nA media das Idades e: %2f", media);
+	printf("\nA porcentagem de Otimo e: %.f%%", perOtimo);
+	printf("\nA porcentagem de Bom e: %.0f%%", perBom);
+	printf("\nA porcentagem de Regular e: %.0f%%", perRegular);
+	printf("\nA porcentagem de Ruim e: %.0f%%", perRuim);
+	printf("\nA porcentagem de Pessimo e: %.0f%%", perPessimo);
+}
